@@ -27,7 +27,7 @@
     // 🧠 Examples of usage:
     // processSingleLearner({ name: "Elisabeth", lovesJS: 1 }) // should return { name: "Elisabeth", lovesJS: true }
     // processSingleLearner({ name: "Pete", age: 23, lovesJS: 0 }) // should return { name: "Pete", age: 23, lovesJS: false }
-   
+
     const processSingleLearner = (learner) => {
       if (learner.lovesJS === 0) {
         learner.lovesJS = false
@@ -75,6 +75,7 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the map method of the learners array.
     // 🧠 Use arrow functions.
+
     const processLearnerMap = (learners) => {
       const result = learners.map(processSingleLearner)
       return result
@@ -88,8 +89,18 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the forEach method of the learners array.
     // 🧠 You will need to declare a result array into which you push learners from inside your forEach loop.
-    const getJavaScriptLoversForEach = () => {
+    const getJavaScriptLoversForEach = (learners) => {
+      let result = []
 
+      learners.forEach(learner => {
+        if (learner.lovesJS) {
+          result.push(learner)
+        }
+      })
+      if (!result.length) {
+        return "no JS lovers here!"
+      }
+      return result
     }
 
     // 👉 CHALLENGE 6
